@@ -1,0 +1,13 @@
+{
+    "name": "matrixlab",
+    "version": "1.0.0",
+    "description": "A lightweight javascript library to work with n*n matrix calculation.",
+    "main": "mat.js",
+    "type": "module",
+    "scripts": {
+
+    },
+    "keywords": [],
+    "license": "MIT",
+    "author": "Sadat Saim"
+}
