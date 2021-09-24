@@ -114,11 +114,12 @@ class Matrix {
     }
 
     add(matA, matB = this.matrix) {
-        let rowEqual = matA.length === matB.length;
-        let colEqual = matA.every((row, i) => row.length === matB[i].length)
-        if (rowEqual && colEqual) {
+        let row = matA.length === matB.length;
+        let col = matA.every((row, i) => row.length === matB[i].length)
+        if (row && col) {
             return matA.map((row, i) => row.map((element, j) => matB[i][j] + element))
         }
+        return `Invalid Matrix: dimension of matA & matB must be same`
     }
 
     sub(matA, matB = this.matrix) {
