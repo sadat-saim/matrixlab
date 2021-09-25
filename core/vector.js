@@ -14,10 +14,22 @@ class Vector extends Matrix {
         if (vectA.length !== vectB.length)
             return "Invalid vector: please fill the empty values with 0";
         let unitVector = [];
+        let productVector = [];
         for (let i = 0; i < vectA.length; i++) {
             unitVector.push(1);
         }
-        return unitVector;
+        let vectorMatrix = [unitVector, vectA, vectB];
+        //taking the unit vector into account
+        vectorMatrix.forEach((row, i) => {
+            productVector.push(this.det(this.cof(0, i, vectorMatrix)) * (-1) ** i)
+        })
+        return productVector;
+    }
+    addv(vectA, vectB = this.vect) {
+        return this.add([vectA], [vectB])[0];
+    }
+    subv(vectA, vectB = this.vect) {
+        return this.sub([vectA], [vectB])[0];
     }
 }
 

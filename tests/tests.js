@@ -3,9 +3,14 @@ import Vector from "../core/vector.js";
 
 
 let vector = new Vector([1, 2, 3])
-let vectB = [2, 2, 2]
+let vectA = [2, 2, 2]
 console.log(vector)
-console.log(vector.dot(vectB)) //12
+console.log(vector.dot(vectA)) //12
+console.log(vector.cross(vectA)) //[2,-4,2]
+console.log(vector.addv(vectA)) //[3,4,5]
+console.log(vector.add([vectA], [vectA])) //[[4,4,4]]
+console.log(vector.sub([vectA], [vectA])) //[[0,0,0]]
+console.log(vector.subv(vectA)) //[-1,0,1]
 
 // if not working, try cd into the test directory then use
 
