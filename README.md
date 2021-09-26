@@ -4,8 +4,8 @@
 
 <h1>A lightweight Javascript library to work with n*n / m*n matrix, vector and numerical methods.</h1>
 
-<p>=============================================================================================
-=============================================================================================</p>
+=============================================================================================
+
 
 <h4> Hello everyone, I am a self-taught js programmer who loves to code and solve math-related problems with js </h4>
 
