@@ -31,6 +31,9 @@ class Vector extends Matrix {
     subv(vectA, vectB = this.vect) {
         return this.sub([vectA], [vectB])[0];
     }
+    mag(vectA = this.vect) {
+        return Math.sqrt(vectA.map(e => e ** 2).reduce((ac, cv) => ac + cv))
+    }
 }
 
 export default Vector;
