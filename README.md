@@ -1,6 +1,13 @@
 
 <h1>MATRIXLAB</h1>
 
+[![Generic badge](https://img.shields.io/badge/Liscense-MIT-<COLOR>.svg)](https://shields.io/)
+[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+
+
+
+
 <b>A lightweight Javascript library to work with (nn / mn) matrix, vector and numerical methods.</b>
 
 <h4> Hello everyone, I am a self-taught js programmer who loves to code and solve math-related problems with js. </h4>
