@@ -9,9 +9,8 @@ console.log(vector.mag())
 console.log(vector.dot(vectA)) //12
 console.log(vector.cross(vectA)) //[2,-4,2]
 console.log(vector.addv(vectA)) //[3,4,5]
-console.log(vector.add([vectA], [vectA])) //[[4,4,4]]
-console.log(vector.sub([vectA], [vectA])) //[[0,0,0]]
 console.log(vector.subv(vectA)) //[-1,0,1]
+console.log(vector.ang(true, vectA)) //22.20765 deg
 
 // if not working, try cd into the test directory then use
 
