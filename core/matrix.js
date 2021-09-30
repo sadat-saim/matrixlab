@@ -1,8 +1,8 @@
 //MatrixLab JS V1.0.0//
 //Sadat-Saim (CEE,SUST)//
 //https://www.facebook.com/sadat.saim.50/
-
-class Matrix {
+"use strict";
+export default class Matrix {
     constructor(matrix) {
         this.matrix = matrix;
     }
@@ -127,4 +127,4 @@ class Matrix {
     }
 }
 
-export default Matrix;
+//export default Matrix;

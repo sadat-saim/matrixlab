@@ -2,7 +2,7 @@ import Matrix from "../core/matrix.js";
 import Vector from "../core/vector.js";
 
 
-let vector = new Vector([1, 2, 3])
+let vector = new Vector([1, 2, 3]);
 let vectA = [2, 2, 2]
 console.log(vector)
 console.log(vector.mag())
@@ -75,3 +75,4 @@ let largeMatrix = [
 
 let lMatrix = new Matrix(largeMatrix)
 console.log(lMatrix.det()) //-2004
+console.log(lMatrix.multiply(largeMatrix))

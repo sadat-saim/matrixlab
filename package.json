@@ -3,10 +3,11 @@
     "version": "1.0.0",
     "description": "A lightweight javascript library to work with n*n matrix calculation.",
     "type": "module",
-    "scripts": {
-
-    },
+    "scripts": {},
     "keywords": [],
     "license": "MIT",
-    "author": "Sadat Saim"
+    "author": "Sadat Saim",
+    "dependencies": {
+        "nodemon": "^2.0.13"
+    }
 }

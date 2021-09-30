@@ -1,6 +1,6 @@
 "use strict";
-import Matrix from "./matrix.js"
-class Vector extends Matrix {
+import Matrix from "./matrix.js";
+export default class Vector extends Matrix {
     constructor(vect) {
         super(vect);
         this.vect = vect;
@@ -46,4 +46,4 @@ class Vector extends Matrix {
     }
 }
 
-export default Vector;
+//export default Vector;
