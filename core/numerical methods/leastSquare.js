@@ -1,6 +1,6 @@
 import Matrix from "../matrix.js";
 
-let leastSquare = function(dataPoints, independenVariables) {
+export default function leastSquare(dataPoints, independenVariables) {
     // for 1 independent variable
     let n = dataPoints.length;
     let x = dataPoints.map(row => row[0]).reduce((ac, cv) => ac + cv)
@@ -15,30 +15,22 @@ let leastSquare = function(dataPoints, independenVariables) {
         let z = dataPoints.map(row => row[2]).reduce((ac, cv) => ac + cv)
         let yz = dataPoints.map(row => row[1] * row[2]).reduce((ac, cv) => ac + cv)
         let zx = dataPoints.map(row => row[0] * row[2]).reduce((ac, cv) => ac + cv)
-        let matrix = new Matrix([
-            [n, x, y],
-            [x, sqX, xy],
-            [y, xy, sqY]
-        ])
-        console.log(z, yz, zx, sqY, matrix)
-
+        let matrix = new Matrix()
+        let result = matrix.multiply(matrix.inv([
+                [n, x, y],
+                [x, sqX, xy],
+                [y, xy, sqY]
+            ]), [
+                [z],
+                [zx],
+                [yz]
+            ])
+            //console.log(z, yz, zx, sqY, matrix, result)
+        return result;
     }
-    console.log(x, sqX, y, xy, a1, a0)
-
+    // console.log(x, sqX, y, xy, a1, a0)
+    return [
+        [a0],
+        [a1]
+    ]
 }
-
-leastSquare([
-    [1, 0.6],
-    [2, 2.4],
-    [3, 3.5],
-    [4, 4.8],
-    [5, 5.7]
-])
-
-leastSquare([
-    [0, 0, 2],
-    [1, 1, 4],
-    [2, 3, 3],
-    [4, 2, 16],
-    [6, 8, 8]
-], 2)
