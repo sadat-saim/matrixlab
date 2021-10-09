@@ -106,6 +106,15 @@ export default class Matrix {
 
     inv(matrix = this.matrix, fraction = true) {
         let determinant = this.det(matrix);
+        let baseMatrix = matrix.every(row => 2 === row.length);
+        if (baseMatrix) {
+            let invMat = [
+                [matrix[1][1], -matrix[0][1]],
+                [-matrix[1][0], matrix[0][1]]
+            ]
+            if (!fraction) return `1/${determinant}*${JSON.stringify(invMat)}`
+            return this.multiply((1 / determinant), invMat);
+        }
         let adjecentMatrix = this.adj(this.cofmat(matrix))
         if (!determinant) return `Invalid Matrix : Determinant is ${determinant}.`;
         if (!fraction) return `1/${determinant}*${JSON.stringify(adjecentMatrix)}`

@@ -76,3 +76,10 @@ let largeMatrix = [
 let lMatrix = new Matrix(largeMatrix)
 console.log(lMatrix.det()) //-2004
 console.log(lMatrix.multiply(largeMatrix))
+let sMatrix = [
+    [20, -3],
+    [4, 5]
+]
+let lmat = new Matrix(sMatrix)
+console.log(lmat.inv())
+console.log(lmat.inv(sMatrix, false))
