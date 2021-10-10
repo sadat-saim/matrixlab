@@ -26,8 +26,10 @@ export default function leastSquare(dataPoints, multipleVariables) {
                 [yz]
             ])
             //console.log(z, yz, zx, sqY, matrix, result)
-        return [...result.map(e => e[0])];
+            //ay+bx+c will return [a,b,c]
+        return [...result.map(e => e[0])].reverse()
     }
     // console.log(x, sqX, y, xy, a1, a0)
-    return [a0, a1]
+    //ax+b will return [a,b]
+    return [a1, a0]
 }
