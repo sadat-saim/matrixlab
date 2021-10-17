@@ -1,19 +1,52 @@
+//visit to learn more about the signs https://www.npmjs.com/package/evaluator.js
 // equation must be expressed in x.
 import evaluate from 'evaluator.js'
 
-function Bisection(equation, negValue, posValue, tolerance) {
-
+export default function Bisection(equation, negValue, posValue, tolerance) {
     let lowerValue = negValue;
     let upperValue = posValue;
-    let x = (lowerValue + upperValue) / 2;
-    let eq = equation.split("")
-    eq.map((e, i) => {
-        if (e === "x") {
-            eq[i] = `${x}`
+    let prevRoot = null;
+    let err = null;
+
+    for (let i = 0;; i++) {
+        let eq = equation.split("")
+        let x = (lowerValue + upperValue) / 2;
+        eq.map((e, i) => {
+            if (e === "x") {
+                eq[i] = `${x}`
+            }
+        })
+
+        //console.log(eq.join(""))//Show equation
+
+        if (i) {
+            err = Math.abs(((prevRoot - x) / x) * 100);
+            if (err <= tolerance) {
+                return `Root: ${x} Evaluated: ${evaluate(eq.join(""))} Itarations: ${i} Error: ${err}`;
+            }
         }
-    })
-    console.log(evaluate(eq.join("")))
+        if (evaluate(eq.join("")) > 0) {
+            upperValue = x;
+            prevRoot = x;
+        } else if (evaluate(eq.join("")) < 0) {
+            lowerValue = x;
+            prevRoot = x;
+        }
+        console.log(`Root: ${x} Evaluated: ${evaluate(eq.join(""))} Itarations: ${i} Error: ${err}`);
+    }
+
 }
 
-Bisection("(x^3)-x-1", 1, 2, 0.5)
-Bisection("(x^3)-x-1", 2, 2, 0.5)
+/*
+Signs
+
+* Multiply
+/ Devide
+^ Power
+% Modulo
+
+Constants
+e Euler's constant and base of natural logarithms
+ln Natural Logarithms
+log10 base 10 logarithms 
+*/

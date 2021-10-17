@@ -1,9 +1,9 @@
 import leastSquare from "../core/numerical methods/leastSquare.js";
 
 /* 
-2 independent variable will return   ay+bx+c will return [a,b,c]
-* and 1 independent variable will return **ax+b** will return [a,b]
-*/
+ *2 independent variable will return   ay+bx+c will return [a,b,c]
+ * and 1 independent variable will return ax+b will return [a,b]
+ */
 
 console.log(leastSquare([
         [1, 0.6],
@@ -30,3 +30,17 @@ let dataPoints = [
 ]
 
 console.log(leastSquare(dataPoints)) //[1.7,-0.30]
+
+let multipleDataPoints = [
+    [60, 22, 140],
+    [62, 25, 155],
+    [67, 24, 159],
+    [70, 20, 179],
+    [71, 15, 192],
+    [72, 14, 200],
+    [75, 14, 212],
+    [78, 11, 215]
+]
+
+console.log(leastSquare(multipleDataPoints, true));
+// model y = -1.656x1+3.14789x2-6.867
