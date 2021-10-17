@@ -2,7 +2,16 @@
 // equation must be expressed in x.
 import evaluate from 'evaluator.js'
 
-export default function Bisection(equation, negValue, posValue, tolerance) {
+/*
+@required {equation} expression must be a string
+@required {negValue} expression must be a negative number
+@required {posValue} expression must be a positive number
+@required {tolerance} expression must be a positive number
+*/
+
+const err = msg => { throw Error(msg) }
+
+export default function Bisection(equation, negValue = err("Required negValue and f(val) must be negative"), posValue = err("Required posValue and f(val) must be a positive number"), tolerance = err("Required tolerance")) {
     let lowerValue = negValue;
     let upperValue = posValue;
     let prevRoot = null;

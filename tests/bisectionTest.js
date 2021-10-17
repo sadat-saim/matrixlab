@@ -20,3 +20,6 @@ console.log(Bisection("(x^3)-x-1", 1, 2, 0.05))
 console.log(Bisection("(x^3)-(2*x)-5", 2, 3, 0.02))
 console.log(Bisection("(x^3)+(x^2)+x+7", -3, -2, 0.02))
 console.log(Bisection("x*(e^x)-1", 0, 1, 0.05))
+
+//throws error because negValue, posValue and tolerance not added
+console.log(Bisection("(x^2)-x+1"))
