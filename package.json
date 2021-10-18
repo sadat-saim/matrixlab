@@ -1,14 +1,19 @@
 {
     "name": "matrixlab",
-    "version": "1.0.0",
-    "description": "A lightweight javascript library to work with n*n matrix calculation.",
+    "version": "1.0.1",
+    "description": "A lightweight javascript library to work with matrix, vector and numerical methods",
     "type": "module",
     "scripts": {},
-    "keywords": [],
+    "keywords": [
+        "matrix",
+        "vector",
+        "numerical",
+        "math",
+        "equations"
+    ],
     "license": "MIT",
     "author": "Sadat Saim",
     "dependencies": {
-        "evaluator.js": "^3.2.3",
-        "nodemon": "^2.0.13"
+        "evaluator.js": "^3.2.3"
     }
 }
