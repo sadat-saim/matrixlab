@@ -37,7 +37,7 @@ export default class Matrix {
         matrix.forEach((row) =>
             row.length === columnLength ? (validInput = true) : (validInput = false)
         );
-        if (!validInput) return "Invalid matrix: Input a valid n*n square matrix";
+        if (!validInput) throw new Error("Invalid matrix: Input a valid n*n square matrix");
 
         //If that is not used throw "access to a class field via this in a nested function" error
         let that = this
@@ -63,7 +63,7 @@ export default class Matrix {
     }
 
     adj(matrix = this.matrix) {
-        if (matrix.length === 0) return "Invalid matrix: Input a valid n*n square matrix";
+        if (matrix.length === 0) throw new Error("Invalid matrix: Input a valid n*n square matrix");
         for (let i = 0; i < matrix.length - 1; i++) {
             for (let j = i; j < matrix.length; j++) {
                 //swap matrix[i][j] to matrix[j][i]
@@ -75,7 +75,7 @@ export default class Matrix {
     }
 
     multiply(matA, matB = this.matrix) {
-        if (!matA) return "Invalid matrix : Input as multiply(number || Matrix, Matrix)"
+        if (!matA) throw new Error("Invalid matrix : Input as multiply(number || Matrix, Matrix)")
             //matB !given by the user in the constructor & in the parameter
         if (!matB.length) return matA
             //matA a number ex- 17
@@ -83,7 +83,7 @@ export default class Matrix {
             return matB.map(row => row.map(element => element * matA))
         }
         let isPossible = matA.every(e => e.length === matB.length)
-        if (!isPossible) return "Invalid matrix: Input valid matrix ij = jk"
+        if (!isPossible) throw new Error("Invalid matrix: Input valid matrix ij = jk")
 
         if (isPossible) {
             let mulMat = []
@@ -116,7 +116,7 @@ export default class Matrix {
             return this.multiply((1 / determinant), invMat);
         }
         let adjecentMatrix = this.adj(this.cofmat(matrix))
-        if (!determinant) return `Invalid Matrix : Determinant is ${determinant}.`;
+        if (!determinant) throw new Error(`Invalid Matrix : Determinant is ${determinant}.`);
         if (!fraction) return `1/${determinant}*${JSON.stringify(adjecentMatrix)}`
         return this.multiply((1 / determinant), adjecentMatrix)
 
@@ -128,7 +128,7 @@ export default class Matrix {
         if (row && col) {
             return matA.map((row, i) => row.map((element, j) => matB[i][j] + element))
         }
-        return `Invalid Matrix: dimension of matA & matB must be same`
+        throw new Error(`Invalid Matrix: dimension of matA & matB must be same`)
     }
 
     sub(matA, matB = this.matrix) {

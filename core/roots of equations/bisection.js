@@ -4,8 +4,8 @@ import evaluate from 'evaluator.js'
 
 /*
 @required {equation} expression must be a string
-@required {negValue} expression must be a negative number
-@required {posValue} expression must be a positive number
+@required {negValue} expression must be a number and F(negValue) = negative number
+@required {posValue} expression must be a number and F(posValue) = positive integer
 @required {tolerance} expression must be a positive number
 */
 
@@ -57,5 +57,6 @@ Signs
 Constants
 e Euler's constant and base of natural logarithms
 ln Natural Logarithms
-log10 base 10 logarithms 
+log10 base 10 logarithms
+log(x) evaluate value of logX
 */

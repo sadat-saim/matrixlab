@@ -8,12 +8,12 @@ export default class Vector extends Matrix {
     }
     dot(vectA, vectB = this.vect) {
         if (vectA.length !== vectB.length)
-            return this.message;
+            throw new Error(this.message);
         return vectA.map((e, i) => e * vectB[i]).reduce((acc, cv) => acc + cv);
     }
     cross(vectA, vectB = this.vect) {
         if (vectA.length !== vectB.length)
-            return this.message;
+            throw new Error(this.message);
         let unitVector = [];
         let productVector = [];
         for (let i = 0; i < vectA.length; i++) {
