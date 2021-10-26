@@ -46,6 +46,9 @@ export default function Bisection(equation, negValue = err("Required negValue an
 
 }
 
+
+
+
 /*
 Signs
 
