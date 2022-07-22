@@ -10,8 +10,6 @@
 
 <b>A lightweight Javascript library to work with (nn / mn) matrix, vector and numerical methods.</b>
 
-<h4> Hello everyone, I am a self-taught js programmer who loves to code and solve math-related problems with js. </h4>
-
 <p> I am developing this library in my free time and to boost my knowledge of programming. Currently, focusing on completing the library. I will try to make it efficient and refactor the code after finishing the library.</p>
 
 <p> To learn how to use this library please check the ⚠️ <b>tests</b> folder. I will add the documentation after I finish coding</p>
