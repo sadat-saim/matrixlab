@@ -83,3 +83,17 @@ let sMatrix = [
 let lmat = new Matrix(sMatrix)
 console.log(lmat.inv())
 console.log(lmat.inv(sMatrix, false))
+    //Example matrix inversion
+let exMat = [
+    [5, -6, 4],
+    [7, 4, -3],
+    [2, 1, 6]
+]
+let omat = [
+    [15],
+    [19],
+    [46]
+]
+
+let exMatrix = new Matrix(exMat)
+console.log(exMatrix.multiply(exMatrix.inv(), omat))
